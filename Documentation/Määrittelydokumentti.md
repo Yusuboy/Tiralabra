@@ -2,7 +2,7 @@
 
 ## 1. Ohjelmointikieli ja muut kielet
 
-Käytän projektissani Python-ohjelmointikieltä. En hallitse muita kieliä riittävn hyvin, jotta voisin antaa vertaispalautetta. 
+Käytän projektissani Python-ohjelmointikieltä. En hallitse muita kieliä riittävn hyvin, jotta voisin antaa vertaispalautetta niistä. 
 
 ## 2. Algoritmit ja tietorakenteet
 
