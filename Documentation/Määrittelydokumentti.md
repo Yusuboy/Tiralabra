@@ -26,8 +26,8 @@ Ohjelma saa syötteenä pakattavan tiedoston, jonka se pakkaa valitulla algoritm
 Projektissa vertaillaan Huffman-koodauksen ja LZW-algoritmin suorituskykyä keskenään. Vertailussa otetaan huomioon pakkausteho ja purkamisen nopeus.
 ## 7. Viitteet
 
-- Huffman-koodaus: [Wikipedia: Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding)
-- Lempel-Ziv-Welch (LZW): [Wikipedia: Lempel-Ziv-Welch](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch)
+- Huffman-koodaus: [Wikipedia: Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding), [Geeksforgeeks: Huffman coding](https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/)
+- Lempel-Ziv-Welch (LZW): [Wikipedia: Lempel-Ziv-Welch](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch), [Geeksforgeeks: LZW (Lempel–Ziv–Welch) ](https://www.geeksforgeeks.org/lzw-lempel-ziv-welch-compression-technique/), 
 
 ## 8. Harjoitustyön Ydin
 
