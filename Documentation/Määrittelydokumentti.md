@@ -14,7 +14,7 @@ Ratkaisen tiedoston pakkaamisen ja purkamisen ongelman. Tavoitteena on saavuttaa
 
 ## 4. Syötteet ja niiden käyttö
 
-Ohjelma saa syötteenä pakattavan tiedoston, jonka se pakkaa valitulla algoritmilla ja tuottaa pakatun tiedoston. Pakatun tiedoston voi sitten antaa ohjelmalle purkamista varten, jolloin se palauttaa alkuperäisen tiedoston.
+Ohjelma saa syötteenä pakattavan tekstitiedoston, jonka se pakkaa valitulla algoritmilla ja tuottaa pakatun tiedoston. Pakatun tiedoston voi sitten antaa ohjelmalle purkamista varten, jolloin se palauttaa alkuperäisen tiedoston.
 
 ## 5. Aika- ja tilavaativuudet
 
@@ -31,7 +31,7 @@ Projektissa vertaillaan Huffman-koodauksen ja LZW-algoritmin suorituskykyä kesk
 
 ## 8. Harjoitustyön Ydin
 
-Projektin ydin on luonnolista kieltävän tekstitiedoston tiedoston pakkaaminen ja purkaminen käyttäen kahta erilaista pakkausalgoritmia, Huffman-koodausta ja Lempel-Ziv-Welch (LZW) -algoritmia. Projektissa vertaillaan näiden suorituskykyä keskenään.
+Projektin ydin on luonnolista kieltä sisältävän tekstitiedoston  pakkaaminen ja purkaminen käyttäen kahta erilaista pakkausalgoritmia, Huffman-koodausta ja Lempel-Ziv-Welch (LZW) -algoritmia. Projektissa vertaillaan näiden suorituskykyä keskenään.
 ## 9. Opinto-ohjelma ja käytetty kieli
 
 Opinto-ohjelma: Tietojenkäsittelytieteen kandidaatti (TKT)
