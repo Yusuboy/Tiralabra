@@ -34,5 +34,5 @@ Projektissa vertaillaan Huffman-koodauksen ja LZW-algoritmin suorituskykyä kesk
 Projektin ydin on luonnolista kieltä sisältävän tekstitiedoston  pakkaaminen ja purkaminen käyttäen kahta erilaista pakkausalgoritmia, Huffman-koodausta ja Lempel-Ziv-Welch (LZW) -algoritmia. Projektissa vertaillaan näiden suorituskykyä keskenään.
 ## 9. Opinto-ohjelma ja käytetty kieli
 
-Opinto-ohjelma: Tietojenkäsittelytieteen kandidaatti (TKT)
-Dokumentaatiossa käytetty kieli: suomi
+- Opinto-ohjelma: Tietojenkäsittelytieteen kandidaatti (TKT)
+- Dokumentaatiossa käytetty kieli: suomi
