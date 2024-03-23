@@ -18,8 +18,8 @@ Ohjelma saa syötteenä pakattavan tekstitiedoston, jonka se pakkaa valitulla al
 
 ## 5. Aika- ja tilavaativuudet
 
-- Huffman-koodaus: Aikavaativuus O(n log n), tilavaativuus riippuu syötteen määrästä
-- Lempel-Ziv-Welch (LZW): Aikavaativuus vaihtelee syötteen mukaan, tilavaativuus riippuu syötteen määrästä
+- Huffman-koodaus: Aikavaativuus O(n log n)
+- Lempel-Ziv-Welch (LZW): Aikavaativuus O(n)
 
 ## 6. Vertailu
 
