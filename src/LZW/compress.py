@@ -1,6 +1,9 @@
 class LZWCompressor:
     def compress(self, input_file, output_file):
-        lzw_dictionary = {chr(i): i for i in range(256)}
+        lzw_dictionary = {}
+        for i in range(256):
+            lzw_dictionary[chr(i)] = i
+
         next_code = 256
 
         with open(input_file, 'r', encoding='ASCII') as file_open:
