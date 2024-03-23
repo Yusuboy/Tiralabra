@@ -7,6 +7,6 @@
 - [Käyttöohje](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/K%C3%A4ytt%C3%B6ohje.md)
 
 ## Viikkoraportit
-[Viikkoraportti 1](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/Viikko1.md)
+- [Viikkoraportti 1](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/Viikko1.md)
 
-[Viikkoraportti 2](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/Viikko2.md)
+- [Viikkoraportti 2](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/Viikko2.md)
