@@ -8,3 +8,5 @@
 
 ## Viikkoraportit
 [Viikkoraportti 1](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/Viikko1.md)
+
+[Viikkoraportti 2](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/Viikko2.md)
