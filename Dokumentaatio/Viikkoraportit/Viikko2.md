@@ -5,7 +5,7 @@ Tällä viikolla opiskelin paljon LZW-algoritmia ja sain sekä LZW-pakkaus- ja p
 
 **Miten ohjelma on edistynyt?**
 
-Tällä viikolla sain valmiiksi LZW-pakkausalgoritmin ja purkausalgoritmin. Pakkausalgoritmille voidaan syöttää tiedosto, jonka se sitten pakkaa, ja purkausalgoritmilla voidaan purkaa pakattu tiedosto alkuperäiseen muotoon. Sanoisin, että ohjelma on edistynyt kohtalaisen hyvin, vaikka alkuviikon aikana LZW-algoritmin sisäistämisessä esiintyi vaikeuksia. Olen myös tehnyt yksikkötestin, jonka avulla varmistetaan algoritmien toimivuus.
+Tällä viikolla sain valmiiksi LZW-pakkausalgoritmin ja purkausalgoritmin. Pakkausalgoritmille voidaan syöttää tiedosto, jonka se sitten pakkaa, ja purkausalgoritmilla voidaan purkaa pakattu tiedosto alkuperäiseen muotoon. Sanoisin, että ohjelma on edistynyt kohtalaisen hyvin, vaikka alkuviikon aikana LZW-algoritmin sisäistämisessä esiintyi vaikeuksia. Olen myös tehnyt yksikkötestin, jonka avulla varmistetaan algoritmien toimivuus. Sekä testikattavuusraportti voidaan luoda ja tarkastella.
 
 **Mitä opin tällä viikolla / tänään?**
 Tällä viikolla opin paljon LZW-pakkausalgoritmin toiminnasta sekä yleisesti pakkausalgoritmien toiminnasta. Opin myös käsittelemään binääritiedostoja ja hyödyntämään open-funktiota paremmin.
