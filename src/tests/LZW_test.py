@@ -1,24 +1,30 @@
 import unittest
 from LZW.compress import LZWCompressor
 from LZW.decompress import LZWDecompressor
+import os
 
 class TestLZW(unittest.TestCase):
     def setUp(self):
+        self.input_file_path = "src/tests/test.txt"
+        self.compressed_file_path = "src/tests/compressed_test.bin"
+        self.decompressed_file_path = "src/tests/decompressed_test_file.txt"
         self.compressor = LZWCompressor()
         self.decompressor = LZWDecompressor()
 
-    def Test_compress_decompress(self):
-        input_file_path = "src/tests/test_file.txt"
-        compressed_file_path = "src/tests/compressed_test_file.txt"
-        decompressef_file_path = "src/tests/decompressed_test_file.txt"
+    def test_compress_decompress(self):
+        self.compressor.compress(self.input_file_path, self.compressed_file_path)
+        self.decompressor.decompress(self.compressed_file_path, self.decompressed_file_path)
 
-        self.compressor.compress(input_file_path,compressed_file_path)
-        self.decompressor.decompress(compressed_file_path,decompressef_file_path)
-
-        with open(input_file_path, 'r') as inptut_file:
+        with open(self.input_file_path, 'r') as inptut_file:
             original_data = inptut_file.read()
 
-        with open(decompressef_file_path, 'r') as decompressed_file:
+        with open(self.decompressed_file_path, 'r') as decompressed_file:
             decompressed_data = decompressed_file.read()
 
         self.assertEqual(original_data,decompressed_data)
+
+    def tearDown(self):
+        if os.path.exists(self.compressed_file_path):
+            os.remove(self.compressed_file_path)
+        if os.path.exists(self.decompressed_file_path):
+            os.remove(self.decompressed_file_path)
