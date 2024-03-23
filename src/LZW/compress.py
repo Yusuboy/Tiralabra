@@ -30,7 +30,7 @@ class LZWCompressor:
                 data = file_open.read()
         except FileNotFoundError:
             raise FileNotFoundError("Input file not found.")
-        
+
         compressed_section = []
         sequence = ""
         for char in data:

@@ -10,7 +10,8 @@ class LZWDecompressor:
 
         Args:
             input_file (str): The path to the file containing compressed data.
-            output_file (str): The path to the output file where the decompressed data will be saved.
+            output_file (str): The path to the output file where,
+            the decompressed data will be saved.
 
         Return:
             None
@@ -25,7 +26,7 @@ class LZWDecompressor:
             compressed_data = open(input_file, "rb")
         except FileNotFoundError:
             raise FileNotFoundError("Input file not found.")
-        
+
         compressed_section = []
         decompressed_section = ""
         sequence = ""
@@ -46,7 +47,7 @@ class LZWDecompressor:
             # sequences += chr(byte)
             if byte not in lzw_dictionary:
                 lzw_dictionary[byte] = sequence + (sequence[0])
-            
+
             decompressed_section += lzw_dictionary[byte]
 
             if len(sequence) != 0:
@@ -55,18 +56,7 @@ class LZWDecompressor:
             sequence = lzw_dictionary[byte]
 
 
-            # if int.from_bytes(byte, 'big') not in lzw_dictionary:
-            #     lzw_dictionary[next_code] = lzw_dictionary[int.from_bytes(sequences[:-1], 'big')] + sequences[-1]
-            #     next_code +=1
-
-            # decompressed_data.append(lzw_dictionary[int.from_bytes(sequences, 'big')])
-            # sequences = chr(byte)
-
-                
         with open(output_file, 'w', encoding='ASCII') as output:
             output.write(decompressed_section)
 
         print("Decompressed data saved to", output_file)
-
-
-    

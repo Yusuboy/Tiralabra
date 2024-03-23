@@ -11,4 +11,3 @@ compressor.compress(CHOSEN_FILE, OUTPUT_FILE)
 DECOMPRESSED_FILE = "src/decompressed.txt"
 
 decompressor.decompress(OUTPUT_FILE, DECOMPRESSED_FILE)
-
