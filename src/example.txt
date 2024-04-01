@@ -1,1 +1,5 @@
-BABAABAAA
+Hello, this is a test file for LZW compression and decompression.
+Привет, как дела?
+こんにちは、元気ですか？
+مرحبا، كيف حالك؟
+😊🌍🎉

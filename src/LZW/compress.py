@@ -21,12 +21,17 @@ class LZWCompressor:
             FileNotFoundError: If the input file does not exist.
         """
         lzw_dictionary = {}
-        for i in range(256):
-            lzw_dictionary[chr(i)] = i
 
-        next_code = 256
+        for code_point in range(0x110000):  # Iterate over all Unicode code points
+            try:
+                char = chr(code_point)  # Convert code point to character
+                lzw_dictionary[char] = code_point  # Add character to dictionary with its code point as value
+            except ValueError:
+                pass  # Some code points may not represent valid characters
+
+        next_code = 0x110000
         try:
-            with open(input_file, 'r', encoding='ASCII') as file_open:
+            with open(input_file, 'r', encoding='utf-8') as file_open:  # Changed encoding to UTF-8
                 data = file_open.read()
         except FileNotFoundError:
             raise FileNotFoundError("Input file not found.")
@@ -49,6 +54,6 @@ class LZWCompressor:
 
         with open(output_file, 'wb') as output:
             for char in compressed_section:
-                output.write(char.to_bytes(2, "big"))
+                output.write(char.to_bytes(4, "big"))
 
         print("Compressed data saved to", output_file)
