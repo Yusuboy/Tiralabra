@@ -24,10 +24,10 @@ class LZWCompressor:
 
         for code_point in range(0x110000):  # Iterate over all Unicode code points
             try:
-                char = chr(code_point)  # Convert code point to character
-                lzw_dictionary[char] = code_point  # Add character to dictionary with its code point as value
+                char = chr(code_point)
+                lzw_dictionary[char] = code_point
             except ValueError:
-                pass  # Some code points may not represent valid characters
+                pass
 
         next_code = 0x110000
         try:
