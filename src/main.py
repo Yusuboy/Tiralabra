@@ -11,7 +11,7 @@ from HuffmanCoding.compress import HuffmanCompress
 # decompressor = LZWDecompressor()
 # compressor.compress(CHOSEN_FILE, OUTPUT_FILE)
 
-# DECOMPRESSED_FILE = "src/decompressed.txt"
+DECOMPRESSED_FILE = "src/decompressed.txt"
 
 # decompressor.decompress(OUTPUT_FILE, DECOMPRESSED_FILE)
 
@@ -19,4 +19,7 @@ CHOSEN_FILE = "src/example2.txt"
 OUTPUT_FILE = "src/compressed_example.bin"
 
 c = HuffmanCompress()
+
 c.compress(CHOSEN_FILE, OUTPUT_FILE)
+c.decompress(OUTPUT_FILE, DECOMPRESSED_FILE)
+
