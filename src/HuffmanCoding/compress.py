@@ -19,7 +19,7 @@ class HuffmanCompress:
                 return self.freq < other.freq
 
             def __eq__(self, other):
-                if other is None or not isinstance(other, self.HeapNode):
+                if(other == None):
                     return False
                 return self.freq == other.freq
 
@@ -158,4 +158,3 @@ class HuffmanCompress:
                 
                 print("Decompression completed")
                 return output_path
-
