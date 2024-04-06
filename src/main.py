@@ -4,7 +4,7 @@ from LZW.decompress import LZWDecompressor
 from HuffmanCoding.compress import HuffmanCompress
 
 
-# CHOSEN_FILE = "src/example.txt"
+CHOSEN_FILE = "src/example.txt"
 # OUTPUT_FILE = "src/compressed_example.bin"
 
 # compressor = LZWCompressor()
@@ -15,7 +15,7 @@ DECOMPRESSED_FILE = "src/decompressed.txt"
 
 # decompressor.decompress(OUTPUT_FILE, DECOMPRESSED_FILE)
 
-CHOSEN_FILE = "src/example2.txt"
+
 OUTPUT_FILE = "src/compressed_example.bin"
 
 c = HuffmanCompress()

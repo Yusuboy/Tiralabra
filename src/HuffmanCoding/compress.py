@@ -19,7 +19,7 @@ class HuffmanCompress:
                 return self.freq < other.freq
 
             def __eq__(self, other):
-                if other is None or not isinstance(other, HeapNode):
+                if other is None or not isinstance(other, self.HeapNode):
                     return False
                 return self.freq == other.freq
 
