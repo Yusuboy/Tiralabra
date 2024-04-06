@@ -11,6 +11,9 @@
 
 - [Viikkoraportti 2](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/Viikko2.md)
 
+- - [Viikkoraportti 3](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/viikko3.md)
+
+
 ## **Ohjelman suorittaminen**
 
  **Ohejelman voi käynistää komennolla:**
