@@ -1,6 +1,7 @@
 # Testausdokumentti
 
 # Kattavuusraportti
+![Testikattavuus](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/coverage.png)
 
 # LZW-pakkausalgoritmin testaus
 
