@@ -31,9 +31,9 @@ def main():
         print("3. Compress with LZW")
         print("4. Decompress with LZW")
         print("5. Exit")
-        
+
         choice = input("Enter your choice (1-5): ")
-        
+
         if choice == "1":
             compress_with_huffman(CHOSEN_FILE, OUTPUT_FILE_HUFFMAN)
             print("File compressed with Huffman.")

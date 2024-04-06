@@ -179,7 +179,7 @@ class HuffmanCompress:
             Returns:
                 str: Path to the compressed output file.
             """
-            
+
             with open(input_file, 'r') as file_open:
                 data = file_open.read()
 
@@ -190,7 +190,7 @@ class HuffmanCompress:
                 self.build_heap(frequency)
                 self.merge_nodes()
                 self.make_nodes()
-                
+
                 encoded_text = self.encode_text(data)
                 # print(encoded_text)
                 # print(type(encoded_text))
@@ -203,8 +203,8 @@ class HuffmanCompress:
                     # print(type(bytes(code)))
                     output.write(bytes(code))
             print("Compressed")
-            
-            
+
+
 
         def cut_padding(self, bit_sequence):
             padded_figures = bit_sequence[:8]
@@ -248,12 +248,12 @@ class HuffmanCompress:
                     bits = bin(byte)[2:].rjust(8, '0')
                     bit_string += bits
                     byte = file_open.read(1)
-                
+
                 encoded_code = self.cut_padding(bit_string)
                 decoded_content = self.decode_content(encoded_code)
 
                 with open(output_path, "w") as output_file:
                     output_file.write(decoded_content)
-                
+
                 print("Decompression completed")
                 
