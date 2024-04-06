@@ -2,28 +2,55 @@ import heapq
 
 
 class HuffmanCompress:
+        """Implements Huffman coding compression and decompression."""
         def __init__(self):
+            """Initialize HuffmanCompress object."""
             self.heap = []
             self.nodes = {}
             self.reverse_mapping = {}
 
 
         class HeapNode:
+            """
+            Class representing nodes in the Huffman tree.
+            """
             def __init__(self, char, freq):
+                """
+                Initialize HeapNode object.
+
+                Parameters:
+                    char (str): Character represented by the node.
+                    freq (int): Frequency of the character.
+                """
                 self.char = char
                 self.freq = freq
                 self.left = None
                 self.right = None
 
             def __lt__(self, other):
+                """
+                Less than comparison operator for HeapNode objects.
+                """
                 return self.freq < other.freq
 
             def __eq__(self, other):
+                """
+                Equel than comparison operator for HeapNode objects.
+                """
                 if(other == None):
                     return False
                 return self.freq == other.freq
 
         def frequency_dictionary(self, text):
+            """
+            Generate frequency dictionary for characters in the text.
+
+            Parameters:
+                text (str): Input text.
+
+            Returns:
+                dict: Frequency dictionary for characters in the text.
+            """
             frequency = {}
             for i in text:
                 if not i in frequency:
@@ -33,12 +60,21 @@ class HuffmanCompress:
 
 
         def build_heap(self, frequency):
+            """
+            Build a heap based on frequencies.
+
+            Parameters:
+                frequency (dict): Frequency dictionary for chars in the text.
+            """
             for key in frequency:
                     node = self.HeapNode(key, frequency[key])
                     heapq.heappush(self.heap, node)
 
 
         def merge_nodes(self): 
+            """
+            Merge nodes in the heap to create Huffman tree.
+            """
             while(len(self.heap)>1):
                 node1 = heapq.heappop(self.heap)
                 node2 = heapq.heappop(self.heap)
@@ -52,6 +88,13 @@ class HuffmanCompress:
 
 
         def make_nodes_helper(self, node, current_sequence):
+            """
+            Helper function to create encoding nodes.
+
+            Parameters:
+                node (HeapNode): Current node in Huffman tree.
+                current_sequence (str): Current encoding sequence.
+            """
             if(node == None):
                 return
             
@@ -64,17 +107,38 @@ class HuffmanCompress:
             self.make_nodes_helper(node.right, current_sequence + "1")
 
         def make_nodes(self):
+            """
+            Create encoding nodes from Huffman tree.
+            """
             root =  heapq.heappop(self.heap)
             current_sequence = ""
             self.make_nodes_helper(root, current_sequence)
 
         def encode_text(self, data):
+            """
+            Encode text using Huffman encoding.
+
+            Parameters:
+                data (str): Input text to be encoded.
+
+            Returns:
+                str: Encoded text.
+            """
             encoded_text = ""
             for i in data:
                 encoded_text += self.nodes[i]
             return encoded_text
 
         def pad_encoded_sequence(self, encoded_text):
+            """
+            Pad the encoded sequence to make its length a multiple of 8.
+
+            Parameters:
+                encoded_text (str): Encoded text sequence.
+
+            Returns:
+                str: Padded encoded text sequence.
+            """
             padding = 8 - len(encoded_text) % 8
             for i in range(padding):
                 encoded_text += "0"
@@ -85,6 +149,15 @@ class HuffmanCompress:
 
 
         def output_binary(self, padded_sequence):
+            """
+            Convert padded binary sequence to bytes.
+
+            Parameters:
+                padded_sequence (str): Padded binary sequence.
+
+            Returns:
+                bytes: Binary representation of the sequence.
+            """
             if(len(padded_sequence)%8 != 0):
                 print("Encoded text not padded properly")
                 exit(0)
@@ -96,10 +169,20 @@ class HuffmanCompress:
             return b
 
         def compress(self, input_file, output_file):
+            """
+            Compres inäut file using Huffman encoding.
+
+            Parameters:
+                input_file (str): Path to input file.
+                output_file (str): Path to output compressed file.
+
+            Returns:
+                str: Path to the compressed output file.
+            """
             
             with open(input_file, 'r') as file_open:
                 data = file_open.read()
-                # data = data.rstrip()
+
 
                 frequency = self.frequency_dictionary(data)
 
@@ -109,12 +192,18 @@ class HuffmanCompress:
                 self.make_nodes()
                 
                 encoded_text = self.encode_text(data)
+                # print(encoded_text)
+                # print(type(encoded_text))
                 padded_sequence = self.pad_encoded_sequence(encoded_text)
+                # print(padded_sequence)
+                # print(type(padded_sequence))
                 code = self.output_binary(padded_sequence)
                 with open(output_file, 'wb') as output:
+                    # print(bytes(code))
+                    # print(type(bytes(code)))
                     output.write(bytes(code))
             print("Compressed")
-            return output_file
+            
             
 
         def cut_padding(self, bit_sequence):
@@ -141,6 +230,16 @@ class HuffmanCompress:
 
 
         def decompress(self, input_path, output_path):
+            """
+            Compres input file using Huffman encoding.
+
+            Parameters:
+                input_file (str): Path to input file.
+                output_file (str): Path to output compressed file.
+
+            Returns:
+                str: Path to the compressed output file.
+            """
             with open(input_path, 'rb') as file_open:
                 bit_string = ""
                 byte = file_open.read(1)
@@ -157,4 +256,4 @@ class HuffmanCompress:
                     output_file.write(decoded_content)
                 
                 print("Decompression completed")
-                return output_path
+                
