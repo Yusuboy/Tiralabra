@@ -1,4 +1,4 @@
-# Viikkoraportti 3
+# Viikkoraportti 4
 
 **Mitä olen tehnyt tällä viikolla?**
 Tällä viikolla paransin käyttöliittymää ja tein lisää testejä testikattavuuden nostattamiseksi. Lisäski aloitin toteutusdokumentaation teon. Lisäksi loin GitHub Actionin, johon lisäsin Codecovin integraation.
