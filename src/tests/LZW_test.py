@@ -8,6 +8,7 @@ class TestLZW(unittest.TestCase):
         self.input_file_path = "src/tests/test.txt"
         self.compressed_file_path = "src/tests/compressed_test.bin"
         self.decompressed_file_path = "src/tests/decompressed_test_file.txt"
+        self.non_existent_file_path = "src/tests/non_existent_file.txt" 
         self.compressor = LZWCompressor()
         self.decompressor = LZWDecompressor()
 
@@ -22,6 +23,11 @@ class TestLZW(unittest.TestCase):
             decompressed_data = decompressed_file.read()
 
         self.assertEqual(original_data,decompressed_data)
+
+    def test_non_existent_input_file(self):
+        # Test for FileNotFoundError when compressing a non-existent file
+        with self.assertRaises(FileNotFoundError):
+            self.compressor.compress(self.non_existent_file_path, self.compressed_file_path)
 
     def tearDown(self):
         if os.path.exists(self.compressed_file_path):

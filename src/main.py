@@ -8,6 +8,12 @@ OUTPUT_FILE_LZW = "src/compressed_W_LZW_example.bin"
 DECOMPRESSED_FILE_HUFFMAN = "src/decompressed_W_Huff.txt"
 DECOMPRESSED_FILE_LZW = "src/decompressed_W_LZW.txt"
 
+# h = Huffman = HuffmanCompress()
+
+# h.compress(CHOSEN_FILE, OUTPUT_FILE_HUFFMAN)
+# h.decompress(OUTPUT_FILE_HUFFMAN, DECOMPRESSED_FILE_HUFFMAN)
+
+
 def compress_with_huffman(input_file, output_file):
     Huffman = HuffmanCompress()
     Huffman.compress(input_file, output_file)
