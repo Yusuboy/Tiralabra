@@ -1,5 +1,6 @@
 # Tiralabra-pakkaus- ja purkualgoritmit
 ![Githhub Actions](https://github.com/Yusuboy/Tiralabra/workflows/CI/badge.svg)
+[![codecov](https://codecov.io/gh/Yusuboy/Tiralabra/graph/badge.svg?token=Bpb3yvC4bp)](https://codecov.io/gh/Yusuboy/Tiralabra)
 
 ## Dokumentaatio
 - [Määrittelydokumentti](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/M%C3%A4%C3%A4rittelydokumentti.md)
