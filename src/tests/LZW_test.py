@@ -24,11 +24,15 @@ class TestLZW(unittest.TestCase):
 
         self.assertEqual(original_data,decompressed_data)
 
-    def test_non_existent_input_file(self):
-        # Test for FileNotFoundError when compressing a non-existent file
+    def test_non_existent_input_file_compress(self):
         with self.assertRaises(FileNotFoundError):
             self.compressor.compress(self.non_existent_file_path, self.compressed_file_path)
 
+    def test_non_existent_input_file_decompress(self):
+        with self.assertRaises(FileNotFoundError):
+            self.decompressor.decompress(self.non_existent_file_path, self.decompressed_file_path)
+
+     
     def tearDown(self):
         if os.path.exists(self.compressed_file_path):
             os.remove(self.compressed_file_path)

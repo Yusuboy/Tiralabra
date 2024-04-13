@@ -22,14 +22,11 @@ class LZWCompressor:
         """
         lzw_dictionary = {}
 
-        for code_point in range(0x110000):  # Iterate over all Unicode code points
-            try:
-                char = chr(code_point)
-                lzw_dictionary[char] = code_point
-            except ValueError:
-                pass
-
+        for code_point in range(0x110000):  # Iterate over all Unicode code points   
+            char = chr(code_point)
+            lzw_dictionary[char] = code_point
         next_code = 0x110000
+        
         try:
             with open(input_file, 'r', encoding='utf-8') as file_open:  # Changed encoding to UTF-8
                 data = file_open.read()
