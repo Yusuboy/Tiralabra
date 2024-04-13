@@ -8,19 +8,14 @@ OUTPUT_FILE_LZW = "src/compressed_W_LZW_example.bin"
 DECOMPRESSED_FILE_HUFFMAN = "src/decompressed_W_Huff.txt"
 DECOMPRESSED_FILE_LZW = "src/decompressed_W_LZW.txt"
 
-# h = Huffman = HuffmanCompress()
 
-# h.compress(CHOSEN_FILE, OUTPUT_FILE_HUFFMAN)
-# h.decompress(OUTPUT_FILE_HUFFMAN, DECOMPRESSED_FILE_HUFFMAN)
+# def compress_with_huffman(input_file, output_file):
+#     Huffman = HuffmanCompress()
+#     Huffman.compress(input_file, output_file)
 
-
-def compress_with_huffman(input_file, output_file):
-    Huffman = HuffmanCompress()
-    Huffman.compress(input_file, output_file)
-
-def decompress_with_huffman(input_file, output_file):
-    Huffman = HuffmanCompress()
-    Huffman.decompress(input_file, output_file)
+# def decompress_with_huffman(input_file, output_file):
+#     Huffman = HuffmanCompress()
+#     Huffman.decompress(input_file, output_file)
 
 def compress_with_lzw(input_file, output_file):
     compressor = LZWCompressor()
@@ -29,6 +24,8 @@ def compress_with_lzw(input_file, output_file):
 def decompress_with_lzw(input_file, output_file):
     decompressor = LZWDecompressor()
     decompressor.decompress(input_file, output_file)
+
+h = HuffmanCompress()
 
 def main():
     while True:
@@ -41,11 +38,11 @@ def main():
         choice = input("Enter your choice (1-5): ")
 
         if choice == "1":
-            compress_with_huffman(CHOSEN_FILE, OUTPUT_FILE_HUFFMAN)
+            h.compress(CHOSEN_FILE, OUTPUT_FILE_HUFFMAN)
             print("File compressed with Huffman.")
         elif choice == "2":
-            decompress_with_huffman(OUTPUT_FILE_HUFFMAN, DECOMPRESSED_FILE_HUFFMAN)
-            print("File decompressed with Huffman.")
+            h.decompress(OUTPUT_FILE_HUFFMAN, DECOMPRESSED_FILE_HUFFMAN)
+            print("File decompressed with LZW.")
         elif choice == "3":
             compress_with_lzw(CHOSEN_FILE, OUTPUT_FILE_LZW)
             print("File compressed with LZW.")
