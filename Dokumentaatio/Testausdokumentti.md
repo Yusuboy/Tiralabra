@@ -1,7 +1,9 @@
 # Testausdokumentti
 
 # Kattavuusraportti
-![Testikattavuus](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/coverage.png)
+## Tämän hetken testikattavuus:
+![Testikattavuus](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/coverage2.png)
+*Testikattavuus seurataan Codecovin avulla.*
 
 # LZW-pakkausalgoritmin testaus
 
