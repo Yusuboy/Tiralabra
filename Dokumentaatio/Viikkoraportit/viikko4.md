@@ -14,4 +14,4 @@ Vaikeuksia tuotti, kun käyttöliittymässä ei toiminut Huffmanilla purkaus, mu
 
 **Mitä teen seuraavaksi?**
 Seuraavaksi tavoitteena on tehostaa algoritmeja ja vertailla näiden kahden algoritmin suorituskykyä. Aloitan myös käyttöohjeen teon.
-**Käytetty tuntimäärä: 22**
+**Käytetty tuntimäärä: 10**

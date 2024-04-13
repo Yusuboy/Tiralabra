@@ -207,6 +207,15 @@ class HuffmanCompress:
 
 
         def cut_padding(self, bit_sequence):
+            """
+            takes the padding from the beginning of a bit sequence off.
+
+            Parameters:
+                bit_sequence (str): A string representing a sequence of bits.
+
+            Returns:
+                str: The bit sequence with no removed.
+            """
             padded_figures = bit_sequence[:8]
             additional_padding = int(padded_figures, 2)
 
@@ -217,6 +226,15 @@ class HuffmanCompress:
 
 
         def decode_content(self, encoded_data):
+            """
+            Decodes the an encoded bit sequence into original text.
+
+            Parameters:
+                encoded_data (str): A string representing an encoded bit sequence.
+
+            Returns:
+                str: The decoded text.
+            """
             current_sequence = ""
             decoded_text = ""
 

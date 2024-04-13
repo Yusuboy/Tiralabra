@@ -38,3 +38,8 @@ Voisi refakturoida koodia ja tehostaa tietorakenteita. Lisäksi voisi lisätä e
 # Laajojen kielimallien käyttö
 - DeepL: kääntään englannin kielistä materiaali, jotta ymmärtäisn paremmin.
 - ChatGPT: avustaa virheiden tunnistamisessa ja käsitteiden selittämisessä. Lisäksi pyysin selvennystä, kun jäin jumiin.
+
+
+# Viitteet
+- Huffman-koodaus: [Wikipedia: Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding), [Geeksforgeeks: Huffman coding](https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/), [Youtube](https://www.youtube.com/watch?v=iiGZ947Tcck&pp=ygUOaHVmZm1hbiBjb2Rpbmc%3D)
+- Lempel-Ziv-Welch (LZW): [Wikipedia: Lempel-Ziv-Welch](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch), [Geeksforgeeks: LZW (Lempel–Ziv–Welch) ](https://www.geeksforgeeks.org/lzw-lempel-ziv-welch-compression-technique/), [Youtube](https://www.youtube.com/watch?v=j2HSd3HCpDs&t=745s&pp=ygUDbHp3)
