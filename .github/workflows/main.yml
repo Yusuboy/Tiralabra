@@ -27,5 +27,5 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
-          token: ${{CODECOV_TOKEN=afd5c3bb-567e-4557-92d9-97153ac65a50}}
+          token: afd5c3bb-567e-4557-92d9-97153ac65a50
           slug: Yusuboy/Tiralabra
