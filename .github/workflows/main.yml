@@ -24,5 +24,8 @@ jobs:
         run: poetry run coverage run --branch -m pytest
       - name: Coverage report
         run: poetry run coverage xml
-      - name: Coverage report to Codecov
-        uses: codecov/codecov-action@v2
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: Yusuboy/Tiralabra
