@@ -31,6 +31,38 @@ class TestHuffman(unittest.TestCase):
         self.assertFalse(node1 == node3)
 
 
+    def test_heap_build(self):
+        frequency = {'a':5, 'b':4, 'c':9}
+        self.Huffman.build_heap(frequency)
+        heap_nodes = []
+        for node in self.Huffman.heap:
+            heap_nodes.append(node.freq)
+        
+        self.assertEqual(heap_nodes, [4,5,9])
+
+    
+    def test_merge_nodes(self):
+        frequency = {'a':5, 'b':4, 'c':9}
+        self.Huffman.build_heap(frequency)
+        self.Huffman.merge_nodes()
+
+        self.assertEqual(len(self.Huffman.heap), 1)
+
+    
+    def test_encoded_text(self):
+        input_string = "helloworld"
+
+        frequency = {'h':1,'e':1,'l':3, 'o':2, 'w':1, 'r':1, 'd':1}
+
+        self.Huffman.build_heap(frequency)
+        self.Huffman.merge_nodes()
+        self.Huffman.make_nodes()
+
+        encoded_text = self.Huffman.encode_text(input_string)
+
+        self.assertEqual(encoded_text,"101000111110110001101111000")
+
+
 
     def tearDown(self):
         if os.path.exists(self.compressed_file_path):
