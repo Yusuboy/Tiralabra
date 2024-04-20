@@ -43,6 +43,9 @@ Tiedoston pakkaaminen ja purkaminen Huffman-koodausalgoritmilla.
 - Testiluokka `TestHuffman` luotiin, ja siihen määriteltiin testitapaukset:
   - `test_compress_decompress`: Testaa tiedoston pakkaamisen ja purkamisen Huffman-koodausalgoritmilla.
   - `test_heapnode_equality`: Testaa, että `HeapNode` -luokan vertailu toimii odotetusti.
+  - `test_heap_build`: Testaa, että keko rakennetaan oikein.
+  - `test_merge_nodes`: Testaa, että solmut yhdistetään oikein.
+  - `test_encoded_text`: Testaa, että teksti koodataan oikein.
 
 ## Syötteet
 - Testit suoritettiin käyttämällä esimerkkitekstitiedostoa (`test.txt`), joka sisältää luonnollista tekstiä ja on kooltaan 1.1MB.
