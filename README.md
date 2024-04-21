@@ -17,6 +17,8 @@
 
 - [Viikkoraportti 4](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/viikko4.md)
 
+- [Viikkoraportti 4](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/viikko5.md)
+
 
 ## **Ohjelman suorittaminen**
 
