@@ -30,7 +30,7 @@ class LZWCompressor:
         except FileNotFoundError:
             raise FileNotFoundError("Input file not found.")
 
-    def compress_data(self, data):
+    def _compress_data(self, data):
         """
         Compresses the input data using the LZW algorithm.
 
@@ -56,7 +56,7 @@ class LZWCompressor:
 
         return compressed_section
 
-    def write_output_file(self, compressed_data, output_file):
+    def _write_output_file(self, compressed_data, output_file):
         """
         Writes the compressed data to the output file.
 

@@ -10,7 +10,7 @@ class LZWDecompressor:
         self.lzw_dictionary = dict([(x, chr(x)) for x in range(0x110000)])
         self.next_code = 0x110000
 
-    def read_compressed_data(self, input_file):
+    def _read_compressed_data(self, input_file):
         """
         Reads compressed data from the input file.
 
@@ -33,7 +33,7 @@ class LZWDecompressor:
         except FileNotFoundError:
             raise FileNotFoundError("Input file not found.")
 
-    def decompress_data(self, compressed_data):
+    def _decompress_data(self, compressed_data):
         """
         Decompresses the input data using the LZW decompression algorithm.
 
@@ -57,7 +57,7 @@ class LZWDecompressor:
             sequence = self.lzw_dictionary[byte]
         return decompressed_section
 
-    def write_output_file(self, decompressed_data, output_file):
+    def _write_output_file(self, decompressed_data, output_file):
         """
         Writes the decompressed data to the output file.
 
