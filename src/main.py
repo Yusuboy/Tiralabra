@@ -11,8 +11,8 @@ BINARY_FILE_FOLDER = "src/BinFiles"
 DECOMPRESSED_FILE_FOLDER = "src/decompressedFiles"
 # OUTPUT_FILE_HUFFMAN = "src/BinFiles/compressed_W_Huff_example.bin"
 # OUTPUT_FILE_LZW = "src/BinFiles/compressed_W_LZW_example.bin"
-DECOMPRESSED_FILE_HUFFMAN = "src/decompressed_W_Huff.txt"
-DECOMPRESSED_FILE_LZW = "src/decompressed_W_LZW.txt"
+# DECOMPRESSED_FILE_HUFFMAN = "src/decompressed_W_Huff.txt"
+# DECOMPRESSED_FILE_LZW = "src/decompressed_W_LZW.txt"
 
 
 

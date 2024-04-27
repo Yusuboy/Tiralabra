@@ -2,7 +2,7 @@
 
 # Kattavuusraportti
 ### Tämän hetken testikattavuus:
-![Testikattavuus](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/coverage2.png)
+![Testikattavuus](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/coverage4.png)
 ## Codecov
 Testikattavuuden seurantaan on integroitu Codecoveen. Testien kattavuuksien tarkempia tietoja voi tarkastella Codecovissa.
 
@@ -17,6 +17,8 @@ Tiedoston pakkaaminen ja purkaminen LZW-pakkausalgoritmilla.
 - Testit suoritettiin automaattisilla yksikkötesteillä käyttäen Pythonin unittest-kirjastoa.
 - Testiluokka `TestLZW` luotiin, ja siihen määriteltiin testitapaus `test_compress_decompress`, joka testaa tiedoston pakkaamisen ja purkamisen.
 - Lisäksi testattiin testitapauksilla `test_non_existent_input_file_compress` ja `test_non_existent_input_file_decompress` pakkaus- ja purkausoperaatioiden käyttäytymistä olemattomien syötetiedostojen tapauksessa.
+- `test_compress_data`: Testaa tiedoston pakkaamisen LZW-algoritmilla antamalla dataa "ABC".
+- `test_compress_data_false_condition`: Testaa, että tiedoston pakkaaminen LZW-algoritmilla ei onnistu odotetusti antamalla dataa "ABCD" epäedullisessa tilanteessa.
 
 ## Syötteet
 - Testit suoritettiin käyttämällä esimerkkitekstitiedostoa (`test.txt`), joka sisältää luonnollista tekstiä ja on kooltaan 1.1MB.
