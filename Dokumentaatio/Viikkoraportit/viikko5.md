@@ -1,4 +1,4 @@
-# Viikkoraportti 4
+# Viikkoraportti 5
 
 **Mitä olen tehnyt tällä viikolla?**
 Suoritin lisää testejä Huffman-koodaukselle ja hienosäädin käyttöliittymää.
