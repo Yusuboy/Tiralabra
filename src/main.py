@@ -91,6 +91,9 @@ def main():
         if choice == "1":
             filename = input("Enter the name of the text file to compress with Huffman: ")
             input_file = os.path.join(TEXT_FILE_FOLDER, filename)
+            if not os.path.isfile(input_file):
+                print("Invalid filename. Please check the filename and try again.")
+                continue
             output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}.bin")
             start_time = time.time()
             h.compress(input_file, output_file)
@@ -110,6 +113,9 @@ def main():
                 print("File must be compressed first")
             else:
                 input_file = os.path.join(BINARY_FILE_FOLDER, filename)
+                if not os.path.isfile(input_file):
+                    print("Invalid filename. Please check the filename and try again.")
+                    continue
                 output_file = os.path.join(DECOMPRESSED_FILE_FOLDER, f"{os.path.splitext(filename)[0]}.txt")
                 start_time = time.time()
                 h.decompress(input_file, output_file)
@@ -120,6 +126,9 @@ def main():
         elif choice == "3":
             filename = input("Enter the name of the text file to compress with LZW: ")
             input_file = os.path.join(TEXT_FILE_FOLDER, filename)
+            if not os.path.isfile(input_file):
+                print("Invalid filename. Please check the filename and try again.")
+                continue
             output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}.bin")
             start_time = time.time()
             compress_with_lzw(input_file, output_file)
@@ -137,6 +146,9 @@ def main():
             if check == True:
                 print("File must be compressed first")
             input_file = os.path.join(BINARY_FILE_FOLDER, filename)
+            if not os.path.isfile(input_file):
+                print("Invalid filename. Please check the filename and try again.")
+                continue
             output_file = os.path.join(DECOMPRESSED_FILE_FOLDER, f"compressed_{os.path.splitext(filename)[0]}.txt")
             start_time = time.time()
             decompress_with_lzw(input_file, output_file)
