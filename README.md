@@ -20,8 +20,16 @@
 - [Viikkoraportti 5](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/viikko5.md)
 
 
-## **Ohjelman suorittaminen**
-
+## **Asennus**
+1. Kloonaa repositorio koneellesi.
+```
+git clone git@github.com:Yusuboy/Tiralabra.git
+```
+2. Siirry juurihakemistoon ja ja asenna riippuvuudet.
+```
+poetry install
+```
+## **Komentorivikäskyt**
  **Ohejelman voi käynistää komennolla:**
 ```bash
 poetry run invoke start
