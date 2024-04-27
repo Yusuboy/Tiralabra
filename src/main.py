@@ -69,6 +69,14 @@ def display_compression_stats(algorithm, original_size, compressed_size, compres
     print(table)
 
 
+def display_decompression_stats(algorithm, decompression_time):
+    table = PrettyTable()
+    table.field_names = ["Algorithm", "deompression Time"]
+    table.add_row([algorithm, decompression_time])
+    print("Decompression Statistics:")
+    print(table)
+
+
 def main():
     display_file_lists()
     while True:
@@ -106,7 +114,7 @@ def main():
                 start_time = time.time()
                 h.decompress(input_file, output_file)
                 end_time = time.time()
-                print(f"File decompressed with Huffman.\nCompression time: {end_time - start_time} seconds")
+                display_decompression_stats("Huffman", end_time - start_time)
 
 
         elif choice == "3":
@@ -134,7 +142,7 @@ def main():
             decompress_with_lzw(input_file, output_file)
             end_time = time.time()
 
-            print(f"File decompressed with LZW.\nCompression time: {end_time - start_time} seconds")
+            display_decompression_stats("LZW", end_time - start_time)
 
         elif choice == "5":
             print("Exiting program.")
