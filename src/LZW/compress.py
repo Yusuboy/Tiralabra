@@ -71,7 +71,7 @@ class LZWCompressor:
             for char in compressed_data:
                 output.write(char.to_bytes(4, "big"))
 
-        print("Compressed data saved to", output_file)
+        # print("Compressed data saved to", output_file)
 
     def compress(self, input_file, output_file):
         """

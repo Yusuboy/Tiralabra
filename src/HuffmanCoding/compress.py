@@ -202,7 +202,7 @@ class HuffmanCompress:
                     # print(bytes(code))
                     # print(type(bytes(code)))
                     output.write(bytes(code))
-            print("Compressed")
+
 
 
 
@@ -273,5 +273,5 @@ class HuffmanCompress:
                 with open(output_path, "w") as output_file:
                     output_file.write(decoded_content)
 
-                print("Decompression completed")
+
                 

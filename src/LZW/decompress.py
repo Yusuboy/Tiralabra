@@ -71,7 +71,7 @@ class LZWDecompressor:
         with open(output_file, 'w', encoding='utf-8') as output:  # Changed encoding to UTF-8
             output.write(decompressed_data)
 
-        print("Decompressed data saved to", output_file)
+        # print("Decompressed data saved to", output_file)
 
     def decompress(self, input_file, output_file):
         """
