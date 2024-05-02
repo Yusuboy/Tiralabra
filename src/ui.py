@@ -1,16 +1,17 @@
 from prettytable import PrettyTable
-from file_utils import list_files, get_file_size
-import os
-import time
-from LZW.compress import LZWCompressor
-from LZW.decompress import LZWDecompressor
-from HuffmanCoding.huffman_coding import HuffmanCompress
+from file_utils import list_files
 
 TEXT_FILE_FOLDER = "src/textfiles"
 BINARY_FILE_FOLDER = "src/BinFiles"
 DECOMPRESSED_FILE_FOLDER = "src/decompressedFiles"
 
 def display_file_lists():
+    """
+    Displays the list of available text files and binary files in their respective folders.
+
+    Retrieves the list of text files and binary files from their designated folders 
+    (TEXT_FILE_FOLDER and BINARY_FILE_FOLDER respectively), and prints them in a tabular format using PrettyTable.
+    """
     text_files = list_files(TEXT_FILE_FOLDER, ".txt")
     binary_files = list_files(BINARY_FILE_FOLDER, ".bin")
 
@@ -30,6 +31,17 @@ def display_file_lists():
 
 
 def display_compression_stats(algorithm, original_size, compressed_size, compression_time):
+    """
+    Displays compression statistics so algorithm used, original size, compressed size, compression ratio, and compression time.
+
+    Args:
+        algorithm (str): The compression algorithm used.
+        original_size (int): The size of the original uncompressed data in bytes.
+        compressed_size (int): The size of the compressed data in bytes.
+        compression_time (float): The time taken for compression process in seconds.
+
+    Prints the decompression statistics using PrettyTable.
+    """
     table = PrettyTable()
     table.field_names = ["Algorithm", "Original Size", "Compressed Size", "Compression Ratio", "Compression Time"]
     table.add_row([algorithm, original_size, compressed_size, ((original_size - compressed_size) / original_size) * 100, compression_time])
@@ -39,6 +51,15 @@ def display_compression_stats(algorithm, original_size, compressed_size, compres
 
 
 def display_decompression_stats(algorithm, decompression_time):
+    """
+    Displays decompression statistics including algorithm used and decompression time.
+
+    Args:
+        algorithm (str): The decompression algorithm used.
+        decompression_time (float): The time taken for decompression process in seconds.
+
+    Prints the decompression statistics using PrettyTable.
+    """
     table = PrettyTable()
     table.field_names = ["Algorithm", "deompression Time"]
     table.add_row([algorithm, decompression_time])
