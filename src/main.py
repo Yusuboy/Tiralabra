@@ -3,6 +3,9 @@ import time
 from LZW.compress import LZWCompressor
 from LZW.decompress import LZWDecompressor
 from HuffmanCoding.huffman_coding import HuffmanCompress
+from file_utils import is_txt_file, get_file_size, delete_files_in_folder
+from ui import display_file_lists, display_compression_stats, display_decompression_stats
+
 from prettytable import PrettyTable
 
 
@@ -10,12 +13,6 @@ TEXT_FILE_FOLDER = "src/textfiles"
 BINARY_FILE_FOLDER = "src/BinFiles"
 DECOMPRESSED_FILE_FOLDER = "src/decompressedFiles"
 CLEAN_FOLDERS = ["src/BinFiles", "src/decompressedFiles"]
-# OUTPUT_FILE_HUFFMAN = "src/BinFiles/compressed_W_Huff_example.bin"
-# OUTPUT_FILE_LZW = "src/BinFiles/compressed_W_LZW_example.bin"
-# DECOMPRESSED_FILE_HUFFMAN = "src/decompressed_W_Huff.txt"
-# DECOMPRESSED_FILE_LZW = "src/decompressed_W_LZW.txt"
-
-
 
 
 def compress_with_lzw(input_file, output_file):
@@ -26,62 +23,10 @@ def decompress_with_lzw(input_file, output_file):
     decompressor = LZWDecompressor()
     decompressor.decompress(input_file, output_file)
 
-h = HuffmanCompress()
-
-
-def is_txt_file(file_path):
-    return file_path.lower().endswith(".txt")
-
-
-def get_file_size(file_path):
-    return os.path.getsize(file_path)
-
-
-def list_files(folder, file_type):
-    files = [file for file in os.listdir(folder) if file.endswith(file_type)]
-    return files
-
-def display_file_lists():
-    text_files = list_files(TEXT_FILE_FOLDER, ".txt")
-    binary_files = list_files(BINARY_FILE_FOLDER, ".bin")
-
-    if not text_files and not binary_files:
-        print("No files found in the folders.")
-    else:
-        max_files = max(len(text_files), len(binary_files))
-
-        table = PrettyTable()
-        table.field_names = ["Available Text Files", "Available Binary Files"]
-
-        for i in range(max_files):
-            text_file = text_files[i] if i < len(text_files) else ""
-            binary_file = binary_files[i] if i < len(binary_files) else ""
-            table.add_row([text_file, binary_file])
-        print(table)
-
-
-
-def display_compression_stats(algorithm, original_size, compressed_size, compression_time):
-    table = PrettyTable()
-    table.field_names = ["Algorithm", "Original Size", "Compressed Size", "Compression Ratio", "Compression Time"]
-    table.add_row([algorithm, original_size, compressed_size, ((original_size - compressed_size) / original_size) * 100, compression_time])
-    print()
-    print("Compression Statistics:")
-    print(table)
-
-
-def display_decompression_stats(algorithm, decompression_time):
-    table = PrettyTable()
-    table.field_names = ["Algorithm", "deompression Time"]
-    table.add_row([algorithm, decompression_time])
-    print("Decompression Statistics:")
-    print(table)
-
-
 def compare_compression(filename):
     input_file = os.path.join(TEXT_FILE_FOLDER, filename)
-    huffman_output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}_compressed_with_Huffman.bin")
-    lzw_output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}_compressed_with_LZW.bin")
+    huffman_output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}_Huffman.bin")
+    lzw_output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}_LZW.bin")
 
     # Compress with Huffman
     huffman_start_time = time.time()
@@ -103,11 +48,7 @@ def compare_compression(filename):
     print("Comparison of Compression Algorithms:")
     print(table)
 
-def delete_files_in_folder(folder):
-    files = os.listdir(folder)
-    for file in files:
-        file_path = os.path.join(folder, file)
-        os.remove(file_path)
+h = HuffmanCompress()
 
 
 def clean_up():
@@ -198,7 +139,8 @@ def main():
         elif choice == "5":
             # Compare compression algorithms
             filename = input("Enter the name of the text file to compare compression algorithms: ")
-            if not os.path.isfile(filename):
+            input_file = os.path.join(TEXT_FILE_FOLDER, filename)
+            if not os.path.isfile(input_file):
                 print("Invalid filename. Please check the filename and try again.")
                 continue
             compare_compression(filename)
