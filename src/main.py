@@ -2,13 +2,14 @@ import os
 import time
 from LZW.compress import LZWCompressor
 from LZW.decompress import LZWDecompressor
-from HuffmanCoding.compress import HuffmanCompress
+from HuffmanCoding.huffman_coding import HuffmanCompress
 from prettytable import PrettyTable
 
 
 TEXT_FILE_FOLDER = "src/textfiles"
 BINARY_FILE_FOLDER = "src/BinFiles"
 DECOMPRESSED_FILE_FOLDER = "src/decompressedFiles"
+CLEAN_FOLDERS = ["src/BinFiles", "src/decompressedFiles"]
 # OUTPUT_FILE_HUFFMAN = "src/BinFiles/compressed_W_Huff_example.bin"
 # OUTPUT_FILE_LZW = "src/BinFiles/compressed_W_LZW_example.bin"
 # DECOMPRESSED_FILE_HUFFMAN = "src/decompressed_W_Huff.txt"
@@ -57,7 +58,6 @@ def display_file_lists():
             binary_file = binary_files[i] if i < len(binary_files) else ""
             table.add_row([text_file, binary_file])
         print(table)
-    
 
 
 
@@ -65,6 +65,7 @@ def display_compression_stats(algorithm, original_size, compressed_size, compres
     table = PrettyTable()
     table.field_names = ["Algorithm", "Original Size", "Compressed Size", "Compression Ratio", "Compression Time"]
     table.add_row([algorithm, original_size, compressed_size, ((original_size - compressed_size) / original_size) * 100, compression_time])
+    print()
     print("Compression Statistics:")
     print(table)
 
@@ -77,16 +78,54 @@ def display_decompression_stats(algorithm, decompression_time):
     print(table)
 
 
+def compare_compression(filename):
+    input_file = os.path.join(TEXT_FILE_FOLDER, filename)
+    huffman_output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}_compressed_with_Huffman.bin")
+    lzw_output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}_compressed_with_LZW.bin")
+
+    # Compress with Huffman
+    huffman_start_time = time.time()
+    h.compress(input_file, huffman_output_file)
+    huffman_end_time = time.time()
+    huffman_compressed_size = get_file_size(huffman_output_file)
+
+    # Compress with LZW
+    LZW_start_time = time.time()
+    compress_with_lzw(input_file, lzw_output_file)
+    lzw_end_time = time.time()
+    lzw_compressed_size = get_file_size(lzw_output_file)
+
+    # Display compression statistics in a pretty table
+    table = PrettyTable()
+    table.field_names = ["Algorithm", "Original Size", "Compressed Size", "Compression Ratio", "Compression Time"]
+    table.add_row(["Huffman", get_file_size(input_file), huffman_compressed_size, ((get_file_size(input_file) - huffman_compressed_size) / get_file_size(input_file)) * 100, huffman_end_time - huffman_start_time])
+    table.add_row(["LZW", get_file_size(input_file), lzw_compressed_size, ((get_file_size(input_file) - lzw_compressed_size) / get_file_size(input_file)) * 100, lzw_end_time - LZW_start_time])
+    print("Comparison of Compression Algorithms:")
+    print(table)
+
+def delete_files_in_folder(folder):
+    files = os.listdir(folder)
+    for file in files:
+        file_path = os.path.join(folder, file)
+        os.remove(file_path)
+
+
+def clean_up():
+    for folder in CLEAN_FOLDERS:
+        delete_files_in_folder(folder)
+    
+
 def main():
-    display_file_lists()
     while True:
+        display_file_lists()
         print("1. Compress with Huffman")
         print("2. Decompress with Huffman")
         print("3. Compress with LZW")
         print("4. Decompress with LZW")
-        print("5. Exit")
+        print("5. Compare algorithms")
+        print("6. Exit")
 
-        choice = input("Enter your choice (1-5): ")
+        choice = input("Enter your choice (1-6): ")
 
         if choice == "1":
             filename = input("Enter the name of the text file to compress with Huffman: ")
@@ -94,7 +133,7 @@ def main():
             if not os.path.isfile(input_file):
                 print("Invalid filename. Please check the filename and try again.")
                 continue
-            output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}.bin")
+            output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}_Huff.bin")
             start_time = time.time()
             h.compress(input_file, output_file)
             end_time = time.time()
@@ -129,7 +168,7 @@ def main():
             if not os.path.isfile(input_file):
                 print("Invalid filename. Please check the filename and try again.")
                 continue
-            output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}.bin")
+            output_file = os.path.join(BINARY_FILE_FOLDER, f"{os.path.splitext(filename)[0]}_LZW.bin")
             start_time = time.time()
             compress_with_lzw(input_file, output_file)
             end_time = time.time()
@@ -157,6 +196,16 @@ def main():
             display_decompression_stats("LZW", end_time - start_time)
 
         elif choice == "5":
+            # Compare compression algorithms
+            filename = input("Enter the name of the text file to compare compression algorithms: ")
+            if not os.path.isfile(filename):
+                print("Invalid filename. Please check the filename and try again.")
+                continue
+            compare_compression(filename)
+
+
+        elif choice == "6":
+            clean_up()
             print("Exiting program.")
             break
         else:

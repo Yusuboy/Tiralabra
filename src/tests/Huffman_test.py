@@ -1,5 +1,5 @@
 import unittest
-from HuffmanCoding.compress import HuffmanCompress
+from HuffmanCoding.huffman_coding import HuffmanCompress
 
 import os
 
