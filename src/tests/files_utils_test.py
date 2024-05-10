@@ -33,8 +33,13 @@ class TestHuffman(unittest.TestCase):
         binary_files = list_files(".", ".bin")
         self.assertIn(self.test_binary_file, binary_files)
 
-    # def test_delete_files_in_folder(self):
-    #     delete_files_in_folder(".")
-
-    #     self.assertFalse(os.path.exists(self.test_text_file))
-    #     self.assertFalse(os.path.exists(self.test_binary_file))
+    def test_delete_files_in_folder(self):
+        folder = "test_folder"
+        if not os.path.exists(folder):
+            os.makedirs(folder)
+        test_files = ["file1.txt", "file2.txt"]
+        for file in test_files:
+            open(os.path.join(folder, file), 'a').close()
+        self.assertTrue(all(os.path.exists(os.path.join(folder, file)) for file in test_files))
+        delete_files_in_folder(folder)
+        self.assertFalse(any(os.path.exists(os.path.join(folder, file)) for file in test_files))
