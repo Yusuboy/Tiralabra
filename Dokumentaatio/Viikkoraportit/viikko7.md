@@ -15,5 +15,5 @@ Tällä viikolla ei kohdattu merkittäviä vaikeuksia tai epäselvyyksiä.
 **Mitä teen seuraavaksi?**
 Korjailen ehkä pylint-virheitä
 
-**Käytetty tuntimäärä: 17**
+**Käytetty tuntimäärä: 20**
 
