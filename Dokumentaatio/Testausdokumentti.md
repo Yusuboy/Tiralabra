@@ -20,6 +20,14 @@ Tiedoston pakkaaminen ja purkaminen LZW-pakkausalgoritmilla.
 - `test_compress_data`: Testaa tiedoston pakkaamisen LZW-algoritmilla antamalla dataa "ABC".
 - `test_compress_data_false_condition`: Testaa, että tiedoston pakkaaminen LZW-algoritmilla ei onnistu odotetusti antamalla dataa "ABCD" epäedullisessa tilanteessa.
 
+Testattiin perusteellisesti LZW-pakkausta - ja purkua eri skenaarioissa varmistaaksemme niiden luotettavuuden.
+
+Varmistimme, että sekä pakkaus- että purkutoiminnot säilyttävät alkuperäisten tietojen eheyden, kun niitä sovelletaan tiedostoihin. Tämä tarkoitti esimerkkitiedoston pakkaamista ja sen purkamista ja sen varmistamista, että tuloksena olevat tiedot vastaavat alkuperäistä sisältöä.
+Tutkittiin myös, miten moduulit käsittelevät olemattomia syötetiedostoja pakkaamisen ja purkamisen aikana. Molemmissa tapauksissa moduulien pitäisi aiheuttaa FileNotFoundError-poikkeus ilman kaatumista, mikä onnistuttiin tarkistamaan.
+Lisäksi arvioimme tietojen pakkauksen tarkkuutta ja varmistimme, että moduulit pakkaavat merkkijonot oikein. Vahvistimme moduulien tarkkuuden antamalla esimerkkitietojonoja ja vertaamalla tuloksena saatua pakattua dataa odotettuun tulosteeseen.
+
+
+Translated with DeepL.com (free version)
 ## Syötteet
 - Testit suoritettiin käyttämällä esimerkkitekstitiedostoa (`test.txt`), joka sisältää luonnollista tekstiä ja on kooltaan 1.1MB.
 
@@ -48,9 +56,23 @@ Tiedoston pakkaaminen ja purkaminen Huffman-koodausalgoritmilla.
   - `test_heap_build`: Testaa, että keko rakennetaan oikein.
   - `test_merge_nodes`: Testaa, että solmut yhdistetään oikein.
   - `test_encoded_text`: Testaa, että teksti koodataan oikein.
+  - `test_frequency_dictionary`: Testaa frekvenssitaulukon luominen.
+  - `test_make_nodes_helper`: Testaa solmujen luonti apumetodilla.
+  - `test_pad_encoded_sequence`: Testaa koodatun sekvenssin täydentäminen.
+  - `test_output_binary`: Testaa koodatun sekvenssin muuntaminen binäärimuotoon.
+  - `test_cut_padding`: Testaa täytteen poistaminen koodatusta sekvenssistä.
+  - `test_decode_content`: Testaa sisällön purkaminen.
+
+Huffman-pakkausalgoritmin toimintaa on testattu perusteellisesti yksikkötesteillä. Ensinnäkin on varmistettu, että pakkaus- ja purkutoiminnot suoritetaan oikein tiedostoilla, ja että alkuperäinen tiedosto säilyy muuttumattomana purkamisen jälkeen. Testit kattavat myös taajuussanakirjan muodostamisen erilaisilla syötteillä, kuten tyhjällä merkkijonolla, yhdellä merkillä sekä useilla merkeillä, mukaan lukien erikoismerkit ja välilyönnit.
+
+Lisäksi on varmistettu solmujen vertailun ja oikean toiminnan toimivan odotetusti. Kekorakenteen rakentamisen ja solmujen yhdistämisen Huffman-pakkauksen aikana on myös varmistettu toimivan oikein. Testit varmistavat, että solmut muodostetaan oikein Huffman-pakkauksen aikana ja että tekstin koodaus tuottaa odotetun koodatun sekvenssin.
+
+Muut testit keskittyvät binaarilähdön, täytetyn sekvenssin leikkauksen ja sisällön purkamisen oikeellisuuteen. Näiden testien avulla varmistetaan, että pakkaus- ja purkutoiminnot toimivat moitteettomasti ja että lopputulos on odotetunlainen.
+
+Yksikkötesteillä on kattavasti varmistettu, että HuffmanCoding-sovellus toimii oikein erilaisissa tilanteissa ja syötteissä, ja että se täyttää odotetut toiminnalliset vaatimukset.
 
 ## Syötteet
-- Testit suoritettiin käyttämällä esimerkkitekstitiedostoa (`test.txt`), joka sisältää luonnollista tekstiä ja on kooltaan 1.1MB.
+- Testejä on suoritettu käyttämällä esimerkkitekstitiedostoa (`test.txt`), joka sisältää luonnollista tekstiä ja on kooltaan 1.1MB.
 
 ## Testien toistettavuus
 - Testit voidaan toistaa suorittamalla testiluokka `TestHuffman`.
