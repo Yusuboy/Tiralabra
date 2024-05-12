@@ -78,17 +78,23 @@ Tiedosto main.py vastaa ohjelman käyttöliittymästä. Ohjelma antaa käyttäj�
 ## LZW
 Koodin pakkaaminen: pakkaaminen on O(n), missä n on alkuperäisen tiedoston koko. Sillä, jokainen tiedoston merkki pakataan johonkin sanakirjan merkkijonoon.
 
-Koodin purkaminen: purkaminen on myös O(n), missä n on alkuperäisen tiedoston koko. Tämä johtuu siitä, että myös jokainen pakattu merkki tiedostosta puretaan.
+Koodin purkaminen: purkaminen on myös O(n), missä n on alkuperäisen tiedoston koko. Tämä johtuu siitä, että myös jokainen pakattu merkki tiedostosta puretaan. 
+Kokonais aikavaatimus on O(n)
+
+Tilavaativuus on O(n), missä n on merkkijonon pituus tiedostossa.
 ## Huffman
+Huffman-puun rakentaminen vaatii aikaa O(n log n), missä n on erilaisten merkkien määrä alkuperäisessä tiedostossa
+
+Tilavaativuus on O(n), missä n on erilaisten merkkien määrä alkuperäisessä tiedostossa.
 
 # Työn mahdolliset puutteet ja parannusehdotukset
 LZW ei ole niin tehokas kun se voisi olla. Minulla on hyvä idea, kuinka tehostaa sitä. Tähän halausin pyytää lisäaikaa opettajalta.
 
 # Laajojen kielimallien käyttö
-- DeepL: kääntään englannin kielistä materiaali, jotta ymmärtäisn paremmin.
-- ChatGPT: avustaa virheiden tunnistamisessa ja käsitteiden selittämisessä. Lisäksi pyysin selvennystä, kun jäin jumiin.
+- DeepL: kääntään englannin kielistä materiaali, jotta ymmärtäisn paremmin. Kieliopin parannuksessa.
+- ChatGPT: avustaa virheiden tunnistamisessa ja käsitteiden selittämisessä. Lisäksi pyysin selvennystä, kun jäin jumiin. Proketin aikana kohtasin parin yksikkötestin kohdalla ongelmia, jotka selvisivät GTP:n avulla. Kieliopin parannuksessa käytin GPT:tä, mutta en kovinkaan paljon.
 
 
 # Viitteet
 - Huffman-koodaus: [Wikipedia: Huffman coding](https://en.wikipedia.org/wiki/Huffman_coding), [Geeksforgeeks: Huffman coding](https://www.geeksforgeeks.org/huffman-coding-greedy-algo-3/), [Youtube](https://www.youtube.com/watch?v=iiGZ947Tcck&pp=ygUOaHVmZm1hbiBjb2Rpbmc%3D)
-- Lempel-Ziv-Welch (LZW): [Wikipedia: Lempel-Ziv-Welch](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch), [Geeksforgeeks: LZW (Lempel–Ziv–Welch) ](https://www.geeksforgeeks.org/lzw-lempel-ziv-welch-compression-technique/), [Youtube](https://www.youtube.com/watch?v=j2HSd3HCpDs&t=745s&pp=ygUDbHp3)
+- Lempel-Ziv-Welch (LZW): [Wikipedia: Lempel-Ziv-Welch](https://en.wikipedia.org/wiki/Lempel-Ziv-Welch), [Geeksforgeeks: LZW (Lempel–Ziv–Welch) ](https://www.geeksforgeeks.org/lzw-lempel-ziv-welch-compression-technique/), [Youtube](https://www.youtube.com/watch?v=j2HSd3HCpDs&t=745s&pp=ygUDbHp3), [Scaler](https://www.scaler.com/topics/lzw-compression/)
