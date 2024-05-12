@@ -2,7 +2,7 @@
 
 # Kattavuusraportti
 ### Tämän hetken testikattavuus:
-![Testikattavuus](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/coverage_7.png)
+![Testikattavuus](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/images/coverage_7.png)
 ## Codecov
 Testikattavuuden seurantaan on integroitu Codecoveen. Testien kattavuuksien tarkempia tietoja voi tarkastella Codecovissa.
 
