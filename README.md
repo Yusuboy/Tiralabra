@@ -19,6 +19,9 @@
 
 - [Viikkoraportti 5](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/viikko5.md)
 
+- [Viikkoraportti 6](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/viikko6.md)
+
+- [Viikkoraportti 7](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/viikko7.md)
 
 ## **Asennus**
 1. Kloonaa repositorio koneellesi.
