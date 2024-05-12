@@ -37,7 +37,7 @@ poetry run invoke lint
 
 ## Ohjelman käynnistys
 
-Kun ohjelma käynnistetään ensimmäisen kerran, se avataan terminaalissa. Ensimmäisen käynnistyksen yhteydessä näytetään taulukko, jossa on listattuna käytettävissä olevat tekstitiedostot ja binääritiedostot. Taulukon lisäksi käyttäjää pyydetään valitsemaan yksi toiminnoista: "Compress with Huffman", "Decompress with Huffman", "Compress with LZW", "Decompress with LZW" tai "Exit", jolla ohjelma voidaan sulkea.
+Kun ohjelma käynnistetään ensimmäisen kerran, se avataan terminaalissa. Ensimmäisen käynnistyksen yhteydessä näytetään taulukko, jossa on listattuna käytettävissä olevat tekstitiedostot ja binääritiedostot. Ohjelman alussa käytettäviä binääritedostoja ei ole. Taulukon lisäksi käyttäjää pyydetään valitsemaan yksi toiminnoista: "Compress with Huffman", "Decompress with Huffman", "Compress with LZW", "Decompress with LZW", "Compare algorithms" tai "Exit", jolla ohjelma voidaan sulkea.
 
 ![Taulukko alkutilanteesta](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/images/ui1.png)
 
@@ -70,4 +70,4 @@ Pakkausaika (kummankin algoritmin osalta).
 ![Taulukko alkutilanteesta](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/images/ui5.png) 
 ## Lopetus
 
-Kun käyttäjä valitsee "Exit", ohjelma sulkeutuu.
+Kun käyttäjä valitsee "Exit", ohjelma sulkeutuu. Kun ohjelma suljetaan, ohjelman aikana luodut tiedostot poistetaan. 
