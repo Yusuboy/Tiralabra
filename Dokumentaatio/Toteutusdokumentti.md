@@ -48,11 +48,10 @@
 │   │   ├── The_Count_of_Monte_Cristo.txt
 │   │   └── War_and_Peace.txt
 │   └── ui.py
-├── tasks.py
 └── test_folder
 ```
 
-## 1. LZW
+## LZW
 
 ### -   LZWCompressor-luokka
 
@@ -73,19 +72,17 @@ Luokka käyttää UTF-8 -koodausta luonollisentekstin käsittelyssä.
 
 
 ## Main
-Tiedosto main.py vastaa ohjelman käyttöliittymästä. Ohjelma antaa käyttäjän valita termminaalissa eri toimintoja, esim tiedostojen pakkaamisen ja purkamisen Huffman-koodauksella tai LZW-pakkauksella.
+Tiedosto main.py vastaa ohjelman käyttöliittymästä. Ohjelma antaa käyttäjän valita termminaalissa eri toimintoja, esim tiedostojen pakkaamisen ja purkamisen Huffman-koodauksella tai LZW-pakkauksella ja näiden vertailu.
 
 # Suorituskyky- ja O-analyysivertailu
-Huffman-koodaus: Aikavaatimuus O(nlogn)
-LZW: Aikavaatimuus O(n)
+## LZW
+Koodin pakkaaminen: pakkaaminen on O(n), missä n on alkuperäisen tiedoston koko. Sillä, jokainen tiedoston merkki pakataan johonkin sanakirjan merkkijonoon.
 
-## Vertailu
-En ole vielä päässyt ihan vertailemaan suorituskykyjä, mutta tässä havaintoja:
-Jos tiedostoissa on paljon samoja merkkejm, niin Huffman-koodaus voi olla parempi tehokas valinta.
-Jos samoja merkkijonoja esiintyy paljon, niin tällöin LZW-pakkaus voi olla parempi.
+Koodin purkaminen: purkaminen on myös O(n), missä n on alkuperäisen tiedoston koko. Tämä johtuu siitä, että myös jokainen pakattu merkki tiedostosta puretaan.
+## Huffman
 
 # Työn mahdolliset puutteet ja parannusehdotukset
-Voisi refakturoida koodia ja tehostaa tietorakenteita. Lisäksi voisi lisätä enemmän kommentteja
+LZW ei ole niin tehokas kun se voisi olla. Minulla on hyvä idea, kuinka tehostaa sitä. Tähän halausin pyytää lisäaikaa opettajalta.
 
 # Laajojen kielimallien käyttö
 - DeepL: kääntään englannin kielistä materiaali, jotta ymmärtäisn paremmin.
