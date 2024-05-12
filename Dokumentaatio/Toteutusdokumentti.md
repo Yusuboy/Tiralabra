@@ -1,4 +1,56 @@
 # Ohjelman Yleisrakenne
+```
+.
+├── Dokumentaatio
+│   ├── images
+│   │   ├── alotus2.png
+│   │   ├── alotus3.png
+│   │   ├── alotus4.png
+│   │   └── alotus.png
+│   ├── Käyttöohje.md
+│   ├── Määrittelydokumentti.md
+│   ├── Testausdokumentti.md
+│   ├── Toteutusdokumentti.md
+│   └── Viikkoraportit
+│       ├── Viikko1.md
+│       ├── Viikko2.md
+│       ├── viikko3.md
+│       ├── viikko4.md
+│       ├── viikko5.md
+│       ├── viikko6.md
+│       └── viikko7.md
+├── pyproject.toml
+├── README.md
+├── src
+│   ├── BinFiles
+│   ├── decompressedFiles
+│   ├── file_utils.py
+│   ├── HuffmanCoding
+│   │   ├── huffman_coding.py
+│   └── LZW
+│   │   ├── compress.py
+│   │   └── decompress.py
+│   ├── main.py
+│   ├── tests
+│   │   ├── files_utils_test.py
+│   │   ├── Huffman_test.py
+│   │   ├── __init__.py
+│   │   ├── LZW_test.py
+│   │   ├── test.txt
+│   │   └── ui_test.py
+│   ├── textfiles
+│   │   ├── Complete_Works_of_William_Shakespeare.txt
+│   │   ├── Ecce_Ipsum.txt
+│   │   ├── Les_Miserables.txt
+│   │   ├── Lorem.txt
+│   │   ├── Moby_Dick_The_Wale.txt
+│   │   ├── System_of_logic.txt
+│   │   ├── The_Count_of_Monte_Cristo.txt
+│   │   └── War_and_Peace.txt
+│   └── ui.py
+├── tasks.py
+└── test_folder
+```
 
 ## 1. LZW
 
