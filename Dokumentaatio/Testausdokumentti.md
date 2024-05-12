@@ -2,7 +2,7 @@
 
 # Kattavuusraportti
 ### Tämän hetken testikattavuus:
-![Testikattavuus](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/coverage4.png)
+![Testikattavuus](https://github.com/Yusuboy/Tiralabra/blob/main/Dokumentaatio/Viikkoraportit/coverage_7.png)
 ## Codecov
 Testikattavuuden seurantaan on integroitu Codecoveen. Testien kattavuuksien tarkempia tietoja voi tarkastella Codecovissa.
 
@@ -36,12 +36,6 @@ Translated with DeepL.com (free version)
 - Alkuperäinen tiedosto ja purettu tiedosto ovat identtiset.
 - Pakkaus- ja purkamistoiminnot toimivat oikein.
 - Ei havaittu virheitä tai poikkeamia.
-## Testien toistettavuus
-- Testit voidaan toistaa suorittamalla testiluokka `TestLZW`.
-- Testit luovat väliaikaisia tiedostoja (`compressed_test.bin` ja `decompressed_test_file.txt`), jotka poistetaan testien jälkeen `tearDown`-metodissa.
-
-## Empiirisen testauksen tulokset graafisessa muodossa
-- Empiiristä testausta ei ole suoritettu. Yksikkötestit kattavat algoritmien toiminnallisuuden varmistaen, että toiminnot suoritetaan oikein.
 
 # Huffman-koodauksen pakkausalgoritmin testaus
 
@@ -74,8 +68,62 @@ Yksikkötesteillä on kattavasti varmistettu, että HuffmanCoding-sovellus toimi
 ## Syötteet
 - Testejä on suoritettu käyttämällä esimerkkitekstitiedostoa (`test.txt`), joka sisältää luonnollista tekstiä ja on kooltaan 1.1MB.
 
-## Testien toistettavuus
-- Testit voidaan toistaa suorittamalla testiluokka `TestHuffman`.
+## Tulokset
+- Testi suoritettiin onnistuneesti.
+- Alkuperäinen tiedosto ja purettu tiedosto ovat identtiset.
+- Pakkaus- ja purkamistoiminnot toimivat oikein.
+- Ei havaittu virheitä tai poikkeamia.
 
-## Empiirisen testauksen tulokset graafisessa muodossa
-- Empiiristä testausta ei ole suoritettu. Yksikkötestit kattavat algoritmien toiminnallisuuden varmistaen, että toiminnot suoritetaan oikein.
+
+# Lisätestaus file_utils-moduulille
+
+## Testattu toiminnallisuus
+Tiedostojen käsittelyyn liittyvien apufunktioiden testaus.
+
+## Miten testaus tehtiin
+- Testit suoritettiin automaattisilla yksikkötesteillä käyttäen Pythonin unittest-kirjastoa.
+- Testiluokka `TestFileUtilis` luotiin, ja siihen määriteltiin seuraavat testitapaukset:
+  - `test_is_txt_file`: Testaa, tunnistetaanko tekstitiedostot oikein.
+  - `test_get_file_size`: Testaa, saadaanko tiedoston koko oikein.
+  - `test_list_files`: Testaa, saadaanko tiedostot listattua oikein tietyltä hakemistolta ja tietyllä tiedostopäätteellä.
+  - `test_delete_files_in_folder`: Testaa, poistetaanko tiedostot kansioista oikein.
+
+## Syötteet
+- Testit suoritettiin luomalla tilapäisiä tekstitiedostoja ja binääritiedostoja, jotka poistettiin testien jälkeen.
+- Testit käyttivät esimerkkitekstitiedostoa (`test.txt`) ja esimerkkibinääritiedostoa (`test.bin`).
+
+## Tulokset
+- Kaikki testit suoritettiin onnistuneesti.
+- Testit varmistivat, että apufunktiot toimivat oikein ja palauttavat odotetut tulokset.
+
+# Lisätestaus käyttöliittymäfunktioille
+
+## Testattu toiminnallisuus
+Käyttöliittymäfunktioiden näyttämisen ja tulostamisen testaus.
+
+## Miten testaus tehtiin
+- Testit suoritettiin automaattisilla yksikkötesteillä käyttäen Pythonin unittest-kirjastoa.
+- Testiluokka `TestDisplayFunctions` luotiin, ja siihen määriteltiin seuraavat testitapaukset:
+  - `test_display_file_lists`: Testaa tiedostolistojen näyttämistä käyttöliittymässä eri skenaarioissa.
+  - `test_display_compression_stats`: Testaa pakkaustilastojen näyttämistä käyttöliittymässä.
+  - `test_display_decompression_stats`: Testaa purkamistilastojen näyttämistä käyttöliittymässä.
+
+## Syötteet
+- Testit käyttivät (`mocks`) ja ohjelman käyttämien funktioiden korvauksia (`patches`) varmistaakseen, että tulostukset ovat odotettuja eri tilanteissa.
+
+## Tulokset
+- Kaikki testit suoritettiin onnistuneesti.
+- Testit varmistivat, että käyttöliittymäfunktiot toimivat oikein ja näyttävät odotetut tulokset.
+- Kukin funktio testattiin erikseen varmistaen, että ne toimivat oikein eri syötteillä ja tilanteissa.
+
+
+
+
+
+# Testien toistettavuus
+- Kaikki testit voidaan toistaa suorittamalla kometno `poetry run invoke test`.
+- Testit luovat väliaikaisia tiedostoja (`compressed_test.bin` ja `decompressed_test_file.txt`), jotka poistetaan testien jälkeen `tearDown`-metodissa.
+
+
+# Empiirisen testauksen tulokset graafisessa muodossa
+- Empiiristä testausta ei ole suoritettu. Yksikkötestit kattavat käyttöliittymäfunktioiden toiminnallisuuden varmistaen, että ne toimivat oikein eri tilanteissa.

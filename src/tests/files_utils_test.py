@@ -2,7 +2,7 @@ import unittest
 import os
 from file_utils import is_txt_file, get_file_size, list_files, delete_files_in_folder
 
-class TestHuffman(unittest.TestCase):
+class TestFileUtilis(unittest.TestCase):
     def setUp(self):
         self.test_text_file = "test.txt"
         self.test_binary_file = "test.bin"
