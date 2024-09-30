@@ -1,8 +1,4 @@
-# Työsuunnitelman Esimerkkirakenne
-
-Tämä dokumentti on tarkoitettu auttamaan opiskelijaa hahmottamaan työsuunnitelman rakennetta. Suunnitelman muoto on vapaa, mutta alla oleva rakenne toimii apuna tarvittavien osien hahmottamisessa. 
-
-Työsuunnitelma on päivittyvä dokumentti, eli sen sisältöä täydennetään työn edetessä. Suunnitelman päätavoite on auttaa opiskelijaa jäsentämään prosessia, sen välitavoitteita sekä tarvittavia toimenpiteitä. Voit käyttää esim. Gantt-kaaviota aikataulun ja välitavoitteiden havainnollistamiseen.
+# Työsuunnitelma
 
 ## 1. Perustiedot
 
