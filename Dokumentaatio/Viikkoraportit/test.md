@@ -48,8 +48,8 @@ Listaa jokaisen kohdan kohdalla suunniteltu ajankohta ja päivitä palautus-/suo
 
 | Viikko | varattu aika (tuntia) | mitä tein/teen
 | :----:|:-----| :-----|
-| Week 40 (30.9 - 6.10.2024) | 16| 	Palautus työsuunnitelman palautus. Suunnitelmana on perehtyä tarkemmin graafisiin neuroverkkoihin ja niiden haasteisiin, erityisesti transformer-arkkitehtuurin näkökulmasta, sekä kirjoittaa aiheesta.
-| Viikko 41 (7.10 - 13.10.2024) | 16 | Suunnitelmana on mahdollisesti jatkaa viime aiheiden parissa. Tällä viikolla tarkoituksena on myös tutkia graafikohtaisia sovelluksia Transformereita varten ja kirjoittaa siitä. 
-| Viikko 42 (14.10 - 19.10.2024) | 16 | Suunnitelmana on mahdollisesti jatkaa viime viikkojen aiheiden parissa. Tällä viikolla tarkoituksena on myös tutkia graafitransformeria (engl. graphormer) ja kirjoittaa siitä.|
+| Week 40 (30.9 - 6.10.2024) | 16| 	Palautus työsuunnitelman palautus. Suunnitelmana on perehtyä tarkemmin graafisiin neuroverkkoihin ja niiden haasteisiin, erityisesti transformer-arkkitehtuurin näkökulmasta, sekä kirjoittaa aiheesta.|
+| Viikko 41 (7.10 - 13.10.2024) | 16 | Suunnitelmana on mahdollisesti jatkaa viime viikon aiheiden parissa. Tällä viikolla tarkoituksena on myös tutkia graafikohtaisia sovelluksia Transformereita varten ja kirjoittaa siitä. |
+| Viikko 42 (14.10 - 19.10.2024) | 16 | Suunnitelmana on mahdollisesti jatkaa viime viikon aiheiden parissa. Tällä viikolla tarkoituksena on myös tutkia graafitransformeria (engl. graphormer) ja kirjoittaa siitä.|
   
 
