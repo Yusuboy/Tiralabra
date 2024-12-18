@@ -1,3 +1,4 @@
+![Profile Views](https://komarev.com/ghpvc/?username=Yusuboy&color=blue&style=flat)
 # Tiralabra-pakkaus- ja purkualgoritmit
 ![Githhub Actions](https://github.com/Yusuboy/Tiralabra/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/Yusuboy/Tiralabra/graph/badge.svg?token=Bpb3yvC4bp)](https://codecov.io/gh/Yusuboy/Tiralabra)
